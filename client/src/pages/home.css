@@ -1,0 +1,60 @@
+.landing-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.firstSection {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+
+}
+.landingPic {
+    width: 650px;
+    height: 400px;
+    border-radius: 7px;
+}
+.landingText {
+    width: 500px;
+    height: 400px;
+    border-radius: 7px;
+    line-height: 1.5cm;
+
+}
+.bottom-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+.section-two {
+    width: 600px;
+    height: 70px;
+    background-color: rgb(248, 243, 243);
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section-three {
+    width: 600px;
+    height: 70px;
+    background-color: rgb(248, 243, 243);
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.githubSvg {
+    width: 40px;
+    height: 40px;
+}
+.link {
+	text-decoration: none;
+	color: inherit;
+}
