@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
 
+import "./creategraduate.css"
+
 export const CreateGraduate = () => {
   const [formData, setFormData] = useState({
     full_name: '',
@@ -47,35 +49,35 @@ export const CreateGraduate = () => {
         />
       </label>
 
-      <label>
-        GitHub Link:
-        <input
-          type="text"
-          name="github_link"
-          value={formData.github_link}
-          onChange={handleChange}
-        />
-      </label>
-
-      <label>
-        LinkedIn Link:
-        <input
-          type="text"
-          name="linkedIn_link"
-          value={formData.linkedIn_link}
-          onChange={handleChange}
-        />
-      </label>
-
-      <label>
-        Portfolio Link:
-        <input
-          type="text"
-          name="portfolio_link"
-          value={formData.portfolio_link}
-          onChange={handleChange}
-        />
-      </label>
+      <div className='link-group'>
+          <label>
+            GitHub Link:
+            <input
+              type="text"
+              name="github_link"
+              value={formData.github_link}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            LinkedIn Link:
+            <input
+              type="text"
+              name="linkedIn_link"
+              value={formData.linkedIn_link}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Portfolio Link:
+            <input
+              type="text"
+              name="portfolio_link"
+              value={formData.portfolio_link}
+              onChange={handleChange}
+            />
+          </label>
+      </div>
 
       <label>
         Role:
@@ -107,7 +109,7 @@ export const CreateGraduate = () => {
       </label>
 
       <button type="submit">Submit</button>
-      {/* {error && "Something went wrong!"} */}
+      {error && "Something went wrong!"}
     </form>
   );
 };
