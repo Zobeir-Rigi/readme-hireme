@@ -1,0 +1,39 @@
+.allGraduates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    padding: 10px;
+}
+.graduate-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 7px;
+    background-color: azure;
+}
+.portfolioSvg {
+    width: 30px;
+    height: 30px;
+}
+
+.link {
+	text-decoration: none;
+	color: inherit;
+}
+.icons-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.icon {
+    font-size: 30px;
+    cursor: pointer;
+}
