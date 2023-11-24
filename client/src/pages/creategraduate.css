@@ -66,4 +66,21 @@ form {
     justify-content: center;
     height: 100vh;
   }
-  
+  .userData {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .user-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+
+  }
+  /* .main-container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  } */

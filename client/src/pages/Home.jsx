@@ -1,14 +1,15 @@
 import landingPic from "../Pics/landingPicture.jpg"
 // import githubIcon from "../Pics/github-mark.svg"
-import "./home.css"
 import { useNavigate } from "react-router-dom";
-
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useUser } from "../UserContext"
+
+import "./home.css"
 
 export const Home = () => {
     const [userName, setUserName] = useState(""); 
-    const [userData, setUserData] = useState(null);
+    const { setUserData } = useUser(); // Get setUserData from the context
     const [error, setError] = useState(false);
     
     const handleInputChange = (event) => {
@@ -32,7 +33,7 @@ export const Home = () => {
                 })
                 .then((data) => {
                     console.log(data); // Log the data here
-                    setUserData(data);
+                    setUserData(data); // Update user data in the context
                     navigate("/createGraduate");
 
                 })
@@ -79,15 +80,6 @@ export const Home = () => {
                         <span className="user-button-span">{"Let's go!"}</span>
                     </button>
                 </div>
-
-                {userData && (
-                    <div className="user-data">
-                        <h2>User Data:</h2>
-                        <p>Username: {userData.login}</p>
-                        <p>Avatar: <img src={userData.avatar_url} alt="Avatar" /></p>
-                        {/* Add more user data as needed */}
-                    </div>
-                )}
             </div>
         </div>
     );
