@@ -31,7 +31,7 @@ export const Graduates = ()=>{
                     {
                     graduates.map(graduate =>(
                         <div className="graduate-card" key={graduate.full_name}>
-                <img className="user-avatar" src={graduate.avatar_url} alt="Avatar" />
+                         <img className="user-avatar" src={graduate.avatar_url} alt="Avatar" />
                             <h2>{graduate.full_name}</h2>
                             <h3>{graduate.role}</h3>
                             <div className="icons-section">
@@ -39,7 +39,7 @@ export const Graduates = ()=>{
                                 <i className="icon fa-brands fa-github"></i>
                                 <img  className="portfolioSvg icon" src= {portfolioBag} alt="" />
                             </div>
-                           <Link className="link" to={`/graduate/${encodeURIComponent(graduate.full_name)}`}> <h4>Detail</h4></Link>
+                           <Link className="link" to={`/GraduateDetail/${encodeURIComponent(graduate.full_name)}`}> <h4>Detail</h4></Link>
 
                         </div>
                     ))

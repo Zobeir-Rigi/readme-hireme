@@ -1,41 +1,78 @@
+/* graduates.css */
+
 .allGraduates {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
     width: 100%;
-    background-color: black;
-    padding: 10px;
+    background-color: #f2f2f2; /* Light Gray Background */
+    padding: 20px;
     align-items: center;
     justify-content: center;
-
 }
+
 .graduate-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 300px;
-    /* height: 300px; */
-    border-radius: 7px;
-    background-color: azure;
+    border-radius: 15px;
+    background-color: #ffffff; /* White Card Background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    color: #333; /* Dark Text for High Contrast */
+    overflow: hidden;
+    &:hover {
+        transform: scale(1.05);
+    }
 }
+
+.user-avatar {
+    width: 100px;
+    max-width: 300px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #5e72e4; /* Purple Text */
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #00bcd4; /* Cyan Text */
+}
+
 .portfolioSvg {
     width: 30px;
     height: 30px;
 }
 
 .link {
-	text-decoration: none;
-	color: inherit;
+    text-decoration: none;
+    color: #e74c3c; /* Light Red Link */
 }
+
 .icons-section {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 15px;
 }
+
 .icon {
-    font-size: 30px;
+    font-size: 1.5rem;
     cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .graduate-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
