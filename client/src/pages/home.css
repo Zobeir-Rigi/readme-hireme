@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: auto;
 }
 .firstSection {
     width: 100%;
@@ -15,13 +14,13 @@
 
 }
 .landingPic {
-    width: 650px;
-    height: 400px;
+    width: 500px;
+    height: 300px;
     border-radius: 7px;
 }
 .landingText {
     width: 500px;
-    height: 400px;
+    height: 300px;
     border-radius: 7px;
     line-height: 1.5cm;
 
@@ -60,3 +59,11 @@
 	color: inherit;
 }
 
+.home-heading {
+    color: black;
+}
+a{
+    text-decoration: none;
+    color: #3498db; 
+
+}
