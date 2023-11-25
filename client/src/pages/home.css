@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: auto;
 }
 .firstSection {
     width: 100%;
@@ -58,3 +59,4 @@
 	text-decoration: none;
 	color: inherit;
 }
+

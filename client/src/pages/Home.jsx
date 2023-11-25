@@ -55,7 +55,7 @@ export const Home = () => {
             </div>
             <div className="bottom-section">
                 <div className="section-two">
-                    <Link className="link" to="/graduates"><span>See Our Wonderfull Graduates</span></Link>
+                    <Link className="link" to="/graduates"><span>🎓 Meet Our Talented Graduates 🌟</span></Link>
                 </div>
                 {/* <div className="section-three">
                     <img className="githubSvg" src= {githubIcon} alt="" />
@@ -63,7 +63,7 @@ export const Home = () => {
                 </div> */}
             </div>
             <div className="user-container">
-                <h2 className="home-heading"> Join the Graduates! Add yourself now.</h2>
+                <h3 className="home-heading"> Join the Graduates! Add yourself now.</h3>
 
                 <div className="user-details">
                     <label htmlFor="username">Enter Your GitHub User Name</label>
