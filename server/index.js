@@ -1,6 +1,7 @@
 const express = require("express");
 const { Pool } = require("pg");
 const bodyParser = require("body-parser"); 
+const cors = require('cors');
 
 require("dotenv").config();
 
@@ -27,7 +28,7 @@ const pool = new Pool({
 /**************************************** */
 // app.use(express.json())
 app.use(bodyParser.json()); // Middleware to parse JSON in the request body
-
+app.use(cors())
 app.get("/", (req, res)=>{
     res.json("Hello, this is the Backend")
 })
@@ -42,15 +43,15 @@ app.get("/graduates", (req, res)=>{
 
 
 app.post("/addgraduate", (req, res) => {
-  const { full_name, github_link, linkedIn_link, portfolio_link, role, about_me, skills } = req.body;
+  const { full_name, github_link, linkedIn_link, portfolio_link, role, about_me, skills, avatar_url} = req.body;
 
   const q = `
       INSERT INTO graduates 
-      (full_name, github_link, linkedIn_link, portfolio_link, role, about_me, skills) 
-      VALUES ($1, $2, $3, $4, $5, $6, $7)
+      (full_name, github_link, linkedIn_link, portfolio_link, role, about_me, skills, avatar_url) 
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
   `;
 
-  const values = [full_name, github_link, linkedIn_link, portfolio_link, role, about_me, skills];
+  const values = [full_name, github_link, linkedIn_link, portfolio_link, role, about_me, skills, avatar_url];
 
   db.query(q, values, (err, data) => {
       if (err) {
@@ -60,6 +61,27 @@ app.post("/addgraduate", (req, res) => {
       return res.status(200).json({ message: "Graduate has been added successfully." });
   });
 });
+
+app.get("/graduate/:fullName", (req, res) => {
+  const fullName = req.params.fullName;
+  const q = "SELECT * FROM graduates WHERE full_name = $1";
+  const values = [fullName];
+
+  db.query(q, values, (err, data) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ error: "Error fetching graduate details." });
+    }
+
+    if (data.rows.length === 0) {
+      return res.status(404).json({ error: "Graduate not found." });
+    }
+
+    const graduate = data.rows[0];
+    return res.status(200).json(graduate);
+  });
+});
+
 
 app.listen(port, ()=>{
     console.log("connected to the Backend")
