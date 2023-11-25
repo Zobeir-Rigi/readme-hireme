@@ -1,11 +1,10 @@
-/* graduates.css */
 
 .allGraduates {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     width: 100%;
-    background-color: #f2f2f2; /* Light Gray Background */
+    background-color: #f2f2f2; 
     padding: 20px;
     align-items: center;
     justify-content: center;
@@ -18,10 +17,10 @@
     justify-content: center;
     width: 300px;
     border-radius: 15px;
-    background-color: #ffffff; /* White Card Background */
+    background-color: #ffffff; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
-    color: #333; /* Dark Text for High Contrast */
+    color: #333; 
     overflow: hidden;
     &:hover {
         transform: scale(1.05);
@@ -39,13 +38,13 @@
 h2 {
     font-size: 1.8rem;
     margin-bottom: 10px;
-    color: #5e72e4; /* Purple Text */
+    color: #5e72e4; 
 }
 
 h3 {
     font-size: 1.4rem;
     margin-bottom: 15px;
-    color: #00bcd4; /* Cyan Text */
+    color: #00bcd4; 
 }
 
 .portfolioSvg {
@@ -55,7 +54,7 @@ h3 {
 
 .link {
     text-decoration: none;
-    color: #e74c3c; /* Light Red Link */
+    color: #e74c3c; 
 }
 
 .icons-section {

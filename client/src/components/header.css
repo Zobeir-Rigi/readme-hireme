@@ -1,0 +1,59 @@
+header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: auto;
+	background-color: var(--SecondaryColor);
+}
+.logo {
+	display: none;
+     width:120px;
+    height:60px ;
+    }
+
+.topic {
+	display: flex;
+	flex-direction: row;
+}
+
+.cyf {
+	color: var(--red);
+	font-size: 1.5rem;
+	padding: 1px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+
+}
+.progress {
+	color: var(--black);
+	font-size: 1.25rem;
+	padding: 3px;
+	filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4)); 
+
+}
+.team-name {
+	color: var(--red);
+	font-size: 1.3rem;
+	letter-spacing: 3px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+	margin-right: 10px;
+	display: none;
+}
+.link {
+	text-decoration: none;
+	color: inherit;
+}
+
+@media (min-width: 650px) {
+	header {
+		justify-content: space-between;
+	}
+	.logo {
+		display: block;
+		filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
+	}
+	.team-name {
+		display: block;
+		filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
+	}
+}

@@ -4,8 +4,6 @@
     align-items: center;
     gap: 20px;
     padding: 20px;
-    /* border: 1px solid #ddd; */
-    /* border-radius: 10px; */
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px;
@@ -51,8 +49,3 @@
   }
   
   
-  /* .detail_container:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
-  }
-   */

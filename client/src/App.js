@@ -4,7 +4,7 @@ import {Home} from "./pages/Home";
 import {CreateGraduate} from "./pages/CreateGraduate";
 import {Graduates} from "./pages/Graduates";
 import {GraduateDetail} from "./pages/GraduateDetail"
-
+import { Header } from './components/Header';
 import { UserProvider } from './UserContext';
 
 export const App = () => {
@@ -12,6 +12,7 @@ export const App = () => {
     <div className="App">
     <BrowserRouter>
     <UserProvider>
+    <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/graduates" element={<Graduates />} />

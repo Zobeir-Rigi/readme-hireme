@@ -26,7 +26,6 @@ export const Graduates = ()=>{
     },[])
     return(
         <div>
-            <h1>Cyf Graduates</h1>
             <div className="allGraduates">
                     {
                     graduates.map(graduate =>(
