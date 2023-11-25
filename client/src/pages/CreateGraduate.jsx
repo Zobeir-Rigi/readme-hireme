@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
 import { useUser } from '../UserContext';
@@ -8,6 +8,7 @@ import "./creategraduate.css"
 
 export const CreateGraduate = () => {
   const { userData } = useUser();
+  const [avatarUrl, setAvatarUrl] = useState("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT4uPEG5Y4tU72FHZiXnBLwgukPFaRIIv4LmnpzfTu08qqMRChd5yqhzb6tEvcfons9SE&usqp=CAU"); // Set the default avatar URL
 
   const [formData, setFormData] = useState({
     full_name: '',
@@ -17,11 +18,17 @@ export const CreateGraduate = () => {
     role: '',
     about_me: '',
     skills: '',
+    avatar_url: '', 
+
   });
   const [error,setError] = useState(false)
 
   const navigate = useNavigate();
-
+  useEffect(() => {
+    if (userData && userData.avatar_url) {
+      setAvatarUrl(userData.avatar_url);
+    }
+  }, [userData]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -31,7 +38,12 @@ export const CreateGraduate = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:8800/addgraduate', formData);
+        const formDataWithAvatar = {
+            ...formData,
+            avatar_url: avatarUrl,
+        };
+
+        await axios.post('http://localhost:8800/addgraduate', formDataWithAvatar);
       console.log('Graduate added successfully!');
       navigate("/graduates");
     } catch (error) {
@@ -123,6 +135,13 @@ export const CreateGraduate = () => {
               onChange={handleChange}
             />
           </label>
+               {/* Hidden input for avatar URL */}
+               <input
+                type="hidden"
+                id="avatar_url"
+                value={avatarUrl}
+                onChange={(e) => setAvatarUrl(e.target.value)}
+            />
 
           <button type="submit">Submit</button>
           {error && "Something went wrong!"}

@@ -15,7 +15,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/graduates" element={<Graduates />} />
-        <Route path='/graduate' element={<Graduate />} />
+        <Route path='//graduate/:fullName' element={<Graduate />} />
         <Route path='/createGraduate' element={<CreateGraduate />} />
       </Routes>
     </UserProvider>
