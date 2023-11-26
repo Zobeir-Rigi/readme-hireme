@@ -29,7 +29,7 @@ export const GraduateDetail = () => {
       {graduate && (
         <div className='detail_container'>
             <div className='pic_name'>
-              <img className="user-avatar" src={graduate.avatar_url} alt="Avatar" />
+              <img className="user-pic" src={graduate.avatar_url} alt="Avatar" />
               <h2>{graduate.full_name}</h2>
             </div>
             <div className='about'>
