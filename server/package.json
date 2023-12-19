@@ -119,7 +119,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "build": "npm install node-module cors db express"
+
   },
   "keywords": [],
   "author": "",
