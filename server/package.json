@@ -120,8 +120,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
-    "build": "npm install --no-optional node-module cors db express"
-
+    "build": "npm install --no-optional --no-shrinkwrap node-module cors db express",
+    "postinstall": "npm ls fsevents || true && npm rm fsevents || true"
+  
   },
   "keywords": [],
   "author": "",
