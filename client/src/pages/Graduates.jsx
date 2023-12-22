@@ -4,26 +4,38 @@ import { useUser } from '../UserContext';
 
 import  "./graduates.css"
 import portfolioBag from"../Pics/portfolio-bag.svg"
-
-
 import { Link } from "react-router-dom"
 
 export const Graduates = ()=>{
     const [graduates, setGraduates] = useState([])
     const { userData } = useUser();
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
 
     useEffect(()=>{
         const fetchAllGraduates = async ()=>{
             try{
-                const res = await axios.get("http://localhost:8800/graduates")
-                // console.log(res)
+                // const res = await axios.get("http://localhost:8800/graduates")
+                const res = await axios.get("https://reedme.onrender.com/graduates");
+                console.log(res)
                 setGraduates(res.data)
+                setLoading(false);
             }catch(err){
                 console.log(err)
+                setError("Error loading data");
+                setLoading(false);
             }
         }
         fetchAllGraduates()
     },[])
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
+    if (error) {
+        return <p>{error}</p>;
+    }
     return(
         <div>
             <div className="allGraduates">
