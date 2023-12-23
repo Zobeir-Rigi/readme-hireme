@@ -8,7 +8,7 @@ import { Link } from "react-router-dom"
 
 export const Graduates = ()=>{
     const [graduates, setGraduates] = useState([])
-    const { userData } = useUser();
+    // const { userData } = useUser();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
