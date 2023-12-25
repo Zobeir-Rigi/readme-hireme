@@ -16,7 +16,7 @@ export const Graduates = ()=>{
     useEffect(()=>{
         const fetchAllGraduates = async ()=>{
             try{
-                const res = await axios.get("http://localhost:8800/graduates")
+                // const res = await axios.get("http://localhost:8800/graduates")
                 const res = await axios.get("https://reedme.onrender.com/graduates");
                 console.log(res)
                 setGraduates(res.data)
