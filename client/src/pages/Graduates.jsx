@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
-import { useUser } from '../UserContext';
+// import { useUser } from '../UserContext';
 
 import  "./graduates.css"
 import portfolioBag from"../Pics/portfolio-bag.svg"
@@ -17,7 +17,7 @@ export const Graduates = ()=>{
         const fetchAllGraduates = async ()=>{
             try{
                 const res = await axios.get("http://localhost:8800/graduates")
-                const res = await axios.get("https://reedme.onrender.com/graduates");
+                // const res = await axios.get("https://reedme.onrender.com/graduates");
                 console.log(res)
                 setGraduates(res.data)
                 setLoading(false);
