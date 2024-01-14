@@ -16,10 +16,12 @@ export const Graduates = ()=>{
     useEffect(()=>{
         const fetchAllGraduates = async ()=>{
             try{
-                const res = await axios.get("http://localhost:8800/graduates")
-                // const res = await axios.get("https://reedme.onrender.com/graduates");
-                console.log(res)
+                //const res = await axios.get("http://localhost:8800/graduates")
+                 const res = await axios.get("https://reedme.onrender.com/graduates");
+                console.log("res",res)
                 setGraduates(res.data)
+                console.log(res.data)
+                console.log("grad",graduates)
                 setLoading(false);
             }catch(err){
                 console.log(err)
@@ -28,9 +30,9 @@ export const Graduates = ()=>{
             }
         }
         fetchAllGraduates()
-    },[])
+    },[graduates])
     if (loading) {
-        return <p>Loading....</p>;
+        return <p>Loading.... <br />Please wait ....</p>;
     }
 
     if (error) {
