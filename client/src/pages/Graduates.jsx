@@ -7,6 +7,9 @@ import portfolioBag from"../Pics/portfolio-bag.svg"
 import { Link } from "react-router-dom"
 
 export const Graduates = ()=>{
+    
+    console.log(process.env.REACT_APP_TESTTT);
+
     const [graduates, setGraduates] = useState([])
     // const { userData } = useUser();
     const [loading, setLoading] = useState(true);
@@ -16,11 +19,12 @@ export const Graduates = ()=>{
     useEffect(()=>{
         const fetchAllGraduates = async ()=>{
             try{
-                const res = await axios.get("http://localhost:8800/graduates")
-                 const res = await axios.get("https://reedme.onrender.com/graduates");
+                const apiUrl = process.env.REACT_APP_API_URL
+                console.log(apiUrl)
+                 const res = await axios.get(apiUrl);
+
                 console.log("res",res)
                 setGraduates(res.data)
-                console.log(res.data)
                 console.log("grad",graduates)
                 setLoading(false);
             }catch(err){
@@ -30,7 +34,7 @@ export const Graduates = ()=>{
             }
         }
         fetchAllGraduates()
-    },[graduates])
+    },[])
     if (loading) {
         return <p>Loading.... <br />Please wait ....</p>;
     }
