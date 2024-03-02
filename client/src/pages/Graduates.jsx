@@ -19,7 +19,7 @@ export const Graduates = ()=>{
     useEffect(()=>{
         const fetchAllGraduates = async ()=>{
             try{
-                const apiUrl = process.env.REACT_APP_API_URL
+                const apiUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:8800/graduates' : 'https://reedme.onrender.com/graduates'
                 console.log(apiUrl)
                  const res = await axios.get(apiUrl);
 
