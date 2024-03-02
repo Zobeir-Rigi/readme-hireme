@@ -52,7 +52,7 @@ export const Graduates = ()=>{
                             <h2>{graduate.full_name}</h2>
                             <h3>{graduate.role}</h3>
                             <div className="icons-section">
-                                <a  href={graduate.linkedin_link} target="_blank"> <i  className="icon fa-brands fa-linkedin-in"></i> </a>
+                                <a href={graduate.linkedin_link} target="_blank"> <i  className="icon fa-brands fa-linkedin-in"></i> </a>
                                 <a href={graduate.github_link} target="_blank"><i className="icon fa-brands fa-github"></i></a>
                                 <a href={graduate.portfolio_link} target="_blank"><img  className="portfolioSvg icon" src= {portfolioBag} alt="" /></a>
                             </div>

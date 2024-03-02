@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect} from 'react';
 import axios from 'axios';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useUser } from '../UserContext';
 
 import "./creategraduate.css"
@@ -21,7 +21,7 @@ export const CreateGraduate = () => {
     avatar_url: '', 
 
   });
-  const [error,setError] = useState(false)
+  const [error,] = useState(false)
 
   const navigate = useNavigate();
   useEffect(() => {
