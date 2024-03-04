@@ -43,7 +43,7 @@ export const CreateGraduate = () => {
             avatar_url: avatarUrl,
         };
 
-        await axios.post('http://localhost:8800/addgraduate', formDataWithAvatar);
+        await axios.post('https://reedme.onrender.com/addgraduate', formDataWithAvatar);
       console.log('Graduate added successfully!');
       navigate("/graduates");
     } catch (error) {
